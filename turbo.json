@@ -2,18 +2,34 @@
   "$schema": "https://turborepo.org/schema.json",
   "baseBranch": "origin/main",
   "pipeline": {
-    "app#build": {
-      "dependsOn": ["^build"],
+    "app#build-client": {
+      "cache": false,
+      "dependsOn": ["^build-client"],
       "inputs": [
         "app/src/index.html",
         "app/src/**/*.scss",
         "app/src/**/*.ts",
         "app/src/**/*.tsx"
       ],
-      "outputs": ["dist/**"]
+      "outputs": ["dist/client/**"]
+    },
+    "app#build-server": {
+      "cache": false,
+      "dependsOn": ["^build-server"],
+      "inputs": [
+        "app/src/index.html",
+        "app/src/**/*.scss",
+        "app/src/**/*.ts",
+        "app/src/**/*.tsx"
+      ],
+      "outputs": ["dist/server/**"]
+    },
+    "build": {
+      "dependsOn": ["^app#build-client", "^app#build-server"]
     },
     "worker#publish": {
-      "dependsOn": ["app#build"],
+      "cache": false,
+      "dependsOn": ["build", "^publish"],
       "inputs": [
         "dist/**",
         "worker/src/*.ts"

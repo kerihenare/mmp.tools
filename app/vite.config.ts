@@ -1,22 +1,26 @@
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import solidPlugin from 'vite-plugin-solid';
-import { ViteWebfontDownload } from 'vite-plugin-webfont-dl';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-export default defineConfig({
+export default defineConfig((env) => ({
   build: {
     emptyOutDir: true,
     outDir: '../dist',
     polyfillDynamicImport: false,
     target: 'esnext'
   },
+  css: {
+    modules: {
+      generateScopedName:
+        env.mode === 'production'
+          ? 'mmp-[hash:base64:4]'
+          : 'mmp-[local]-[hash:base64:3]'
+    }
+  },
   plugins: [
     tsconfigPaths(),
     solidPlugin(),
-    ViteWebfontDownload([
-      'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap'
-    ]),
     VitePWA({
       disable: true,
       manifest: {
@@ -29,4 +33,4 @@ export default defineConfig({
       }
     })
   ]
-});
+}));

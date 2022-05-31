@@ -1,0 +1,32 @@
+html {
+  background-color: #231f20;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  height: 100%;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+a {
+  color: #d43900;
+  text-decoration: none;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  @media screen and (min-width: 996px) {
+    display: grid;
+    grid-template-columns: minmax(15rem, 1fr) minmax(auto, 4fr);
+    grid-template-rows: minmax(3.5rem, 3.5rem) minmax(0, 1fr);
+  }
+}
