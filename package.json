@@ -1,0 +1,10 @@
+{
+  "name": "mmp.tools",
+  "description": "MMP Tools",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://mmp.tools",
+  "scripts": {
+    "build": "cd app && npm run build"
+  }
+}

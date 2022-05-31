@@ -1,0 +1,21 @@
+{
+  "name": "mmp.tools",
+  "description": "MMP Tools",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://mmp.tools",
+  "scripts": {
+    "build": "NODE_ENV=production vite build",
+    "serve": "vite preview",
+    "start": "vite"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.7.2",
+    "vite": "^2.9.9",
+    "vite-plugin-solid": "^2.2.6"
+  },
+  "dependencies": {
+    "solid-js": "^1.4.3"
+  }
+}

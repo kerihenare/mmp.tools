@@ -1,0 +1,8 @@
+name = "mmp-tools"
+route = "https://mmp.tools/*"
+
+compatibility_date = "2022-05-31"
+main = "src/worker.ts"
+
+[site]
+  bucket = "../dist"
