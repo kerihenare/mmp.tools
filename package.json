@@ -5,6 +5,14 @@
   "private": true,
   "homepage": "https://mmp.tools",
   "scripts": {
-    "build": "cd app && npm run build"
+    "build": "turbo run build",
+    "publish": "turbo run publish"
+  },
+  "workspaces": [
+    "app",
+    "worker"
+  ],
+  "devDependencies": {
+    "turbo": "^1.2.14"
   }
 }

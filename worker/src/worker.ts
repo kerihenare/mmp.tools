@@ -1,14 +1,10 @@
-/**
- * Welcome to Cloudflare Workers! This is your first worker.
- *
- * - Run `wrangler dev src/index.ts` in your terminal to start a development server
- * - Open a browser tab at http://localhost:8787/ to see your worker in action
- * - Run `wrangler publish src/index.ts --name my-worker` to publish your worker
- *
- * Learn more at https://developers.cloudflare.com/workers/
- */
+import { getAssetFromKV } from '@cloudflare/kv-asset-handler';
+
+import { manifest } from './manifest';
 
 export interface Env {
+  __STATIC_CONTENT: string;
+
   // Example binding to KV. Learn more at https://developers.cloudflare.com/workers/runtime-apis/kv/
   // MY_KV_NAMESPACE: KVNamespace;
   //
@@ -21,17 +17,40 @@ export interface Env {
 
 export default {
   /**
-   * 
-   * @param _request
+   *
+   * @param request
    * @param _env
-   * @param _ctx
+   * @param ctx
    * @returns
    */
   async fetch(
-    _request: Request,
-    _env: Env,
-    _ctx: ExecutionContext
+    request: Request,
+    env: Env,
+    ctx: ExecutionContext
   ): Promise<Response> {
-    return new Response("mmp.tools");
-  },
+    const url = new URL(request.url);
+
+    if (url.pathname === '/asset-manifest.json') {
+      return new Response(JSON.stringify(manifest, null, 2), {
+        headers: {
+          'content-type': 'application/json;charset=UTF-8'
+        }
+      });
+    }
+
+    try {
+      return await getAssetFromKV(
+        {
+          request,
+          waitUntil: (promise) => ctx.waitUntil(promise)
+        },
+        {
+          ASSET_MANIFEST: manifest,
+          ASSET_NAMESPACE: env.__STATIC_CONTENT
+        }
+      );
+    } catch (e) {
+      return new Response(`mmp.tools @ ${Date.now().toString(36)}`);
+    }
+  }
 };

@@ -1,19 +1,22 @@
 {
-  "name": "mmp.tools",
-  "description": "MMP Tools",
+  "name": "app",
+  "description": "MMP Tools - Web App",
   "version": "1.0.0",
   "private": true,
   "homepage": "https://mmp.tools",
   "scripts": {
     "build": "NODE_ENV=production vite build",
-    "serve": "vite preview",
     "start": "vite"
   },
   "license": "MIT",
   "devDependencies": {
+    "sass": "^1.52.1",
     "typescript": "^4.7.2",
     "vite": "^2.9.9",
-    "vite-plugin-solid": "^2.2.6"
+    "vite-plugin-pwa": "^0.12.0",
+    "vite-plugin-solid": "^2.2.6",
+    "vite-plugin-webfont-dl": "^2.1.0",
+    "vite-tsconfig-paths": "^3.5.0"
   },
   "dependencies": {
     "solid-js": "^1.4.3"
