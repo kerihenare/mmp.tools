@@ -43,7 +43,9 @@ button:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; 
   height: auto;
+  margin: 0;
 }

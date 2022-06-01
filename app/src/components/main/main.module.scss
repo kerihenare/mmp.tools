@@ -2,6 +2,11 @@
   background-color: #fff;
   color: #212529;
   flex: 1;
+  order: 3;
   overflow: auto;
   padding: 1rem;
+
+  @media screen and (min-width: 996px) {
+    order: 2;
+  }
 }

@@ -26,7 +26,7 @@ a {
 
   @media screen and (min-width: 996px) {
     display: grid;
-    grid-template-columns: minmax(15rem, 1fr) minmax(auto, 4fr);
+    grid-template-columns: minmax(auto, 4fr) minmax(17.5rem, 1fr);
     grid-template-rows: minmax(3.5rem, 3.5rem) minmax(0, 1fr);
   }
 }

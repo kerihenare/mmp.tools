@@ -12,6 +12,9 @@
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
+    "paths": {
+      "~components/*": ["src/components/*"]
+    },
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
