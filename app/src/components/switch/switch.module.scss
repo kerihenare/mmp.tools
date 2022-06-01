@@ -1,0 +1,55 @@
+.container {
+  position: relative;
+
+  input {
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+  }
+}
+
+.field {
+  display: block;
+  margin: 0 0 1rem;
+}
+
+.indicator {
+  background: rgba(155, 155, 155, 0.3);
+  border: none;
+  border-radius: 1.75rem;
+  cursor: pointer;
+  display: inline-block;
+  height: 1rem;
+  margin-right: 0.625rem;
+  min-width: 1.75rem;
+  position: relative;
+  user-select: none;
+  vertical-align: middle;
+  width: auto;
+
+  &::before {
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(20, 20, 20, 0.5);
+    height: calc(1em - 4px);
+    left: 0;
+    margin: 2px;
+    position: absolute;
+    transition: left 0.1s cubic-bezier(0.4, 1, 0.75, 0.9);
+    width: calc(1em - 4px);
+  }
+
+  input:checked ~ & {
+    background: #2d72d2;
+  }
+
+  input:checked ~ &::before {
+    left: calc(100% - 1rem);
+  }
+}
+
+.label {
+  font-weight: 500;
+}

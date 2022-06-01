@@ -29,7 +29,7 @@ export default defineConfig((env) => ({
         name: 'mmp.tools',
         short_name: 'mmp.tools',
         start_url: '/?utm_source=homescreen',
-        theme_color: '#ff7300'
+        theme_color: '#231f20'
       }
     })
   ]

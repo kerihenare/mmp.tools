@@ -18,7 +18,7 @@ interface NumberInputProps {
  */
 export const NumberInput: Component<NumberInputProps> = (props) => (
   <label class={styles.field} for={props.id}>
-    <span class={styles.label}>{props.label}</span>
+    <strong class={styles.label}>{props.label}</strong>
     <span class={styles.container}>
       <input
         type="number"

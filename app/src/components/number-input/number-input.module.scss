@@ -19,6 +19,7 @@
     line-height: 1.875rem;
     outline: none;
     padding: 0 0.625rem;
+    text-align: right;
     transition: box-shadow 0.1s cubic-bezier(0.4, 1, 0.75, 0.9);
     vertical-align: middle;
     width: 100%;
@@ -38,5 +39,6 @@
 
 .label {
   display: block;
+  font-weight: 500;
   margin-bottom: 0.3125rem;
 }
