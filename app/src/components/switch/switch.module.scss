@@ -22,7 +22,7 @@
   cursor: pointer;
   display: inline-block;
   height: 1rem;
-  margin-right: 0.625rem;
+  margin-right: 0.5rem;
   min-width: 1.75rem;
   position: relative;
   user-select: none;
@@ -33,12 +33,13 @@
     background: #fff;
     border-radius: 50%;
     box-shadow: 0 0 0 1px rgba(20, 20, 20, 0.5);
-    height: calc(1em - 4px);
+    content: " ";
+    height: calc(1rem - 4px);
     left: 0;
     margin: 2px;
     position: absolute;
     transition: left 0.1s cubic-bezier(0.4, 1, 0.75, 0.9);
-    width: calc(1em - 4px);
+    width: calc(1rem - 4px);
   }
 
   input:checked ~ & {
@@ -51,5 +52,7 @@
 }
 
 .label {
+  cursor: pointer;
+  display: inline-block;
   font-weight: 500;
 }

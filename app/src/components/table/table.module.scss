@@ -1,0 +1,51 @@
+.table {
+  border-collapse: collapse;
+  box-sizing: border-box;
+  font-weight: 500;
+  max-width: 100%;
+  width: 100%;
+
+  td,
+  th {
+    padding: 0.75rem;
+    text-align: right;
+  }
+
+  tbody td {
+    font-weight: normal;
+  }
+
+  tbody th,
+  thead th:first-child {
+    padding-left: 1rem;
+    text-align: left;
+  }
+
+  tbody td,
+  tbody th,
+  tfoot td,
+  tfoot th {
+    border-top: 1px solid #eee;
+  }
+
+  tbody tr:first-child td,
+  tbody tr:first-child th,
+  tfoot tr:first-child td,
+  tfoot tr:first-child th {
+    border-top-width: 2px;
+  }
+
+  tbody tr:nth-child(odd) td,
+  tbody tr:nth-child(odd) th {
+    background-color: #f8f8f8;
+  }
+
+  tr[data-href] {
+    cursor: pointer;
+  }
+
+  tr[data-href]:hover td,
+  tr[data-href]:hover th {
+    background-color: #cfe8fc;
+  }
+}
